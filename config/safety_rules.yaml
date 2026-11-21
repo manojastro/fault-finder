@@ -1,0 +1,73 @@
+# SAFETY RULES - STATUS: PROVISIONAL: needs review by a qualified person.
+#
+# Drafted by the build agent for a demo. These patterns are NOT a validated safety
+# system. A qualified safety professional must review, correct and extend them
+# before any real use. The check runs in plain code BEFORE any model call; on a
+# match no AI answer is generated.
+#
+# Each pattern is a case-insensitive Python regular expression. A report matches a
+# rule if ANY of its patterns match. Rules are deliberately broad: a false alarm
+# costs a supervisor call, a miss could cost an injury.
+
+status: "PROVISIONAL: needs review by a qualified person"
+
+stop_message: >-
+  STOP WORK. This report describes a possible safety hazard. Do not touch or
+  restart the equipment. Make the area safe only if you can do so without risk,
+  and call a qualified supervisor now. FaultFinder will not give troubleshooting
+  advice for this report.
+
+rules:
+  - id: electric_shock
+    description: Electric shock risk, exposed live parts, arcing or water on electrical equipment
+    patterns:
+      - '\b(electric(al)?\s+)?shock(ed|s)?\b'
+      - '\belectrocut'
+      - '\b(exposed|bare|damaged|frayed)\s+(live\s+)?(wire|wiring|cable|conductor)s?\b'
+      - '\blive\s+(wire|conductor|terminal|part)s?\b'
+      - '\b(spark(s|ing)?|arc(ing|ed|\s+flash))\b'
+      - '\btingl(e|ing)\b'
+      - '\bwater\s+(in|on|into|inside)\s+(the\s+)?(motor\s+)?(terminal\s+box|junction\s+box|control\s+panel|panel|starter)\b'
+
+  - id: smoke_or_fire
+    description: Smoke, fire, or burning smell (burning smell with or without smoke)
+    patterns:
+      - '\bsmok(e|ing|y)\b'
+      - '\b(fire|flames?|on\s+fire)\b'
+      - '\b(burning|burnt|scorched)\s+(smell|odou?r)\b'
+      - '\bsmell(s|ing)?\s+(of\s+)?(burning|burnt)\b'
+
+  - id: pressure_release
+    description: Uncontrolled release of pressure, burst parts, spraying hot or pressurised fluid
+    patterns:
+      - '\b(burst|ruptur(e|ed))\b'
+      - '\b(blew|blown)\s+(out|off|apart)\b'
+      - '\bblown\s+gasket\b'
+      - '\bspray(ing|ed|s)?\b.{0,30}\b(hot|pressuri[sz]ed|steam|fluid|water|liquid)\b'
+      - '\b(steam|hot\s+water)\s+(leak|escap|jet|spray)'
+      - '\b(sudden|uncontrolled)\s+(release|loss)\s+of\s+pressure\b'
+      - '\brelief\s+valve\s+(lifting|blowing|popped|venting)\b'
+      - '\b(open|opening|loosen|loosening|undo|undoing)\b.{0,40}\b(under|while)\s+(it\s+is\s+)?(still\s+)?pressur'
+
+  - id: guard_removed
+    description: Rotating machinery with a guard removed, or reaching into moving parts
+    patterns:
+      - '\bguard\s+(is\s+|was\s+)?(removed|off|missing|open|taken\s+off|broken)\b'
+      - '\b(removed|took\s+off|without)\s+(the\s+)?(coupling\s+|shaft\s+)?guard\b'
+      - '\bno\s+(coupling\s+|shaft\s+)?guard\b'
+      - '\b(reach|reaching|put|putting|touch|touching)\b.{0,40}\b(while|when)\s+(it\s+is\s+|it''s\s+|still\s+)?(running|rotating|spinning|turning)\b'
+      - '\b(hand|finger|glove|sleeve|clothing)s?\b.{0,30}\b(caught|stuck|pulled|trapped)\b'
+
+  - id: lockout_bypass
+    description: Isolation, lockout or interlocks bypassed
+    patterns:
+      - '\bbypass(ed|ing)?\s+(the\s+)?(interlock|lockout|e-?stop|emergency\s+stop|safety)'
+      - '\bwithout\s+(a\s+)?(lockout|lock\s*out|isolation|isolating)\b'
+      - '\b(no|skip(ped)?)\s+(lockout|lock\s*out|loto)\b'
+
+  - id: injury_or_hazardous_substance
+    description: A person is hurt, or a hazardous substance is released
+    patterns:
+      - '\b(injur(y|ed|ies)|bleeding|unconscious|collapsed|burned\s+(his|her|their|my)|hurt)\b'
+      - '\b(chemical|acid|caustic|toxic)\s+(leak|spill|splash|release|fumes)'
+      - '\bgas\s+(leak|smell)\b'

@@ -1,0 +1,327 @@
+=== PAGE 1 ===
+SYNTHETIC DOCUMENT - generated for a demo. Not a real manufacturer manual. Do not use for real equipment.
+
+FF-CP150 End-Suction Centrifugal Pump
+Installation, Operation and Maintenance Manual (SYNTHETIC)
+
+1 About this manual
+This manual covers the FF-CP150 single-stage, end-suction centrifugal pump with a
+close-coupled 15 kW electric motor. It is written for maintenance technicians and
+operators. Read the safety chapter before any work on the pump.
+Chapters: 2 Safety, 3 Description, 4 Installation, 5 Commissioning, 6 Operation,
+7 Monitoring and fault codes, 8 Troubleshooting, 9 Maintenance, 10 Spare parts.
+
+=== PAGE 2 ===
+SYNTHETIC DOCUMENT - generated for a demo. Not a real manufacturer manual. Do not use for real equipment.
+
+2 Safety information
+2.1 General safety rules
+Only trained and authorised persons may install, operate or maintain the pump.
+Before any maintenance, isolate the motor electrically and apply lockout and tagout.
+Never reach into the pump, the coupling or the shaft area while the pump is running.
+The coupling guard must be fitted before the pump is started.
+Electrical work on the motor and the control panel must be done by a qualified
+electrician. If you notice smoke, sparking or a burning smell, stop the pump from a
+safe position and inform a supervisor.
+
+=== PAGE 3 ===
+SYNTHETIC DOCUMENT - generated for a demo. Not a real manufacturer manual. Do not use for real equipment.
+
+2.2 Pressure and hot fluid hazards
+The pump casing and piping can contain fluid under pressure and at high temperature.
+Close the suction and discharge valves and release pressure through the casing drain
+before opening any joint. Never loosen flange bolts or the casing cover while the
+system is pressurised. Wear the protective equipment listed in the site permit.
+2.3 Lifting
+Use the lifting points shown on the pump drawing. Never lift the pump by the motor
+eye bolt when the pump end is attached.
+
+=== PAGE 4 ===
+SYNTHETIC DOCUMENT - generated for a demo. Not a real manufacturer manual. Do not use for real equipment.
+
+3 Pump description
+3.1 Main components
+The pump consists of a volute casing, a closed impeller fixed to the shaft, a
+cartridge mechanical seal, a bearing frame with two rolling bearings, a flexible
+coupling and a three-phase induction motor. Wear rings between the impeller and the
+casing limit internal recirculation. The bearing frame has grease nipples on the
+drive-end and non-drive-end bearings.
+
+=== PAGE 5 ===
+SYNTHETIC DOCUMENT - generated for a demo. Not a real manufacturer manual. Do not use for real equipment.
+
+3.2 Technical data
+Rated flow: 150 m3/h at a head of 45 m.
+Rated speed: 2950 rpm. Motor: 15 kW, 400 V, 3 phase, 50 Hz, rated current 28 A.
+NPSH required at rated flow: 3.2 m.
+Bearing housing temperature limit: 80 C. Vibration alarm limit: 4.5 mm/s RMS.
+Maximum casing pressure: 16 bar. Maximum fluid temperature: 90 C.
+Wear ring diametral clearance: new 0.35 mm, replace at 0.70 mm.
+
+=== PAGE 6 ===
+SYNTHETIC DOCUMENT - generated for a demo. Not a real manufacturer manual. Do not use for real equipment.
+
+4 Installation
+4.1 Foundation and baseplate
+Mount the baseplate on a rigid concrete foundation. Grout the baseplate and tighten
+the foundation bolts to the torque given on the installation drawing.
+4.2 Shaft alignment
+Align pump and motor shafts after grouting and again after the piping is connected.
+Maximum parallel and angular misalignment: 0.05 mm measured with a dial indicator
+or a laser alignment tool. Misalignment causes vibration, bearing heat and coupling
+wear. Pipe strain must not move the pump; support the piping independently.
+
+=== PAGE 7 ===
+SYNTHETIC DOCUMENT - generated for a demo. Not a real manufacturer manual. Do not use for real equipment.
+
+4.3 Suction piping and NPSH
+Keep the suction line short, straight and one size larger than the pump suction.
+Avoid air pockets; the line should rise steadily towards the pump. Fit a suction
+strainer and keep it clean, because a fouled strainer reduces NPSH available and
+causes cavitation. NPSH available must exceed NPSH required by at least 1 m.
+Do not throttle the pump on the suction side.
+
+=== PAGE 8 ===
+SYNTHETIC DOCUMENT - generated for a demo. Not a real manufacturer manual. Do not use for real equipment.
+
+5 Commissioning and start-up
+5.1 Before the first start
+Fill the casing and suction line with liquid and vent all air. Never run the pump
+dry, even for a few seconds, because the mechanical seal faces will be damaged.
+Check the direction of rotation against the arrow on the casing with the coupling
+disconnected. Confirm the coupling guard is fitted.
+5.2 Start-up
+Open the suction valve fully. Start the pump with the discharge valve slightly open,
+then open the discharge valve slowly to the duty point.
+
+=== PAGE 9 ===
+SYNTHETIC DOCUMENT - generated for a demo. Not a real manufacturer manual. Do not use for real equipment.
+
+6 Operation
+6.1 Operating window
+Operate between 30 % and 110 % of the best efficiency point flow. Running far right
+of the best efficiency point overloads the motor and raises NPSH required. Running
+below minimum flow heats the fluid and increases vibration.
+6.2 Shutdown
+Close the discharge valve slowly, stop the motor, then close the suction valve if the
+pump will stay idle.
+
+=== PAGE 10 ===
+SYNTHETIC DOCUMENT - generated for a demo. Not a real manufacturer manual. Do not use for real equipment.
+
+7 Monitoring and fault codes
+7.1 Controller and sensors
+The pump controller reads bearing temperature, motor winding temperature, vibration
+at the drive-end bearing housing, suction pressure, discharge pressure and motor
+current. When a limit is exceeded the controller shows a fault code of the form
+PF-1xx and records it in the event log. A fault code is a symptom, not a diagnosis:
+use chapter 8 to investigate the cause.
+
+=== PAGE 11 ===
+SYNTHETIC DOCUMENT - generated for a demo. Not a real manufacturer manual. Do not use for real equipment.
+
+7.2 Fault code table
+Code | Name | Trigger condition | See page
+PF-101 | High vibration | Overall vibration at a bearing housing above 4.5 mm/s RMS for 60 s | 12
+PF-102 | Bearing over-temperature | Bearing housing temperature above 80 C | 12
+PF-103 | Mechanical seal leakage | Seal leak detector wet or visible leakage above 10 drops per minute | 13
+PF-104 | Cavitation detected | Suction pressure below the NPSH alarm limit with high-frequency noise | 13
+PF-105 | Low discharge pressure | Discharge pressure more than 15 % below the duty point | 14
+PF-106 | Motor overload | Motor current above 110 % of rated current for 30 s | 14
+PF-107 | Dry run / loss of prime | Motor power below 40 % of rated with no discharge flow | 15
+PF-108 | High discharge pressure | Discharge pressure above 120 % of the duty point | 15
+PF-109 | Motor winding over-temperature | Motor winding thermistor above trip temperature | 16
+PF-110 | Coupling noise or wear | Coupling inspection finding or rhythmic knocking at the coupling | 16
+PF-111 | Pressure sensor fault | Pressure transmitter signal outside 4 to 20 mA | 17
+PF-112 | Abnormal noise | Operator report of knocking, grinding or rattling | 17
+
+=== PAGE 12 ===
+SYNTHETIC DOCUMENT - generated for a demo. Not a real manufacturer manual. Do not use for real equipment.
+
+8 Troubleshooting
+Isolate and lock out the pump before any check that needs contact with moving parts.
+8.1 PF-101 High vibration
+Trigger condition: Overall vibration at a bearing housing above 4.5 mm/s RMS for 60 s.
+Likely causes (most frequent first):
+- Shaft misalignment between pump and motor
+- Impeller imbalance from deposits or damage
+- Worn or damaged rolling bearings
+- Loose foundation or baseplate bolts
+Checks to run:
+- Measure vibration velocity at both bearing housings in horizontal, vertical and axial directions
+- Check shaft alignment with a dial indicator or laser alignment tool
+- Inspect the impeller for deposits, erosion or missing material
+- Check torque on foundation and baseplate bolts
+
+8.2 PF-102 Bearing over-temperature
+Trigger condition: Bearing housing temperature above 80 C.
+Likely causes (most frequent first):
+- Worn or damaged rolling bearings
+- Over-lubrication of the bearings
+- Insufficient or degraded lubricant
+- Shaft misalignment between pump and motor
+Checks to run:
+- Measure bearing housing temperature with a contact thermometer
+- Check grease quantity and condition against the lubrication schedule
+- Listen to the bearings with a stethoscope for roughness
+- Check shaft alignment with a dial indicator or laser alignment tool
+
+=== PAGE 13 ===
+SYNTHETIC DOCUMENT - generated for a demo. Not a real manufacturer manual. Do not use for real equipment.
+
+8.3 PF-103 Mechanical seal leakage
+Trigger condition: Seal leak detector wet or visible leakage above 10 drops per minute.
+Likely causes (most frequent first):
+- Worn mechanical seal faces
+- Seal damaged by dry running
+- Incorrect seal installation or setting length
+Checks to run:
+- Inspect the seal area and measure the leakage rate
+- Check the seal flush line for flow and blockage
+- Check the seal setting length against the seal drawing
+- Review recent start-up records for dry running
+
+8.4 PF-104 Cavitation detected
+Trigger condition: Suction pressure below the NPSH alarm limit with high-frequency noise.
+Likely causes (most frequent first):
+- Insufficient NPSH available at the suction
+- Blocked or fouled suction strainer
+- Suction valve partly closed
+- Fluid temperature higher than design
+Checks to run:
+- Measure suction pressure and compare with the NPSH required
+- Inspect and clean the suction strainer
+- Confirm the suction valve is fully open
+- Measure fluid temperature at the suction
+
+=== PAGE 14 ===
+SYNTHETIC DOCUMENT - generated for a demo. Not a real manufacturer manual. Do not use for real equipment.
+
+8.5 PF-105 Low discharge pressure
+Trigger condition: Discharge pressure more than 15 % below the duty point.
+Likely causes (most frequent first):
+- Worn impeller or wear rings
+- Air entering the suction line
+- Blocked or fouled suction strainer
+- Wrong direction of rotation
+Checks to run:
+- Measure discharge pressure and compare with the pump curve
+- Measure wear ring clearance during the next inspection
+- Check the suction line and flanges for air leaks
+- Confirm direction of rotation against the arrow on the casing
+
+8.6 PF-106 Motor overload
+Trigger condition: Motor current above 110 % of rated current for 30 s.
+Likely causes (most frequent first):
+- Operating far right of the best efficiency point
+- Fluid viscosity or density above design
+- Mechanical binding or rubbing in the pump
+- Supply voltage imbalance between phases
+Checks to run:
+- Measure motor current on all three phases
+- Check the discharge valve position and actual flow
+- Rotate the shaft by hand after lockout to feel for binding
+- Ask an electrician to measure supply voltage on all phases
+
+=== PAGE 15 ===
+SYNTHETIC DOCUMENT - generated for a demo. Not a real manufacturer manual. Do not use for real equipment.
+
+8.7 PF-107 Dry run / loss of prime
+Trigger condition: Motor power below 40 % of rated with no discharge flow.
+Likely causes (most frequent first):
+- Pump running dry with no liquid in the casing
+- Air entering the suction line
+- Supply tank level too low
+- Leaking foot valve on the suction line
+Checks to run:
+- Check the supply tank level
+- Vent the casing and confirm the pump is primed
+- Check the suction line and flanges for air leaks
+- Inspect the foot valve for leakage
+
+8.8 PF-108 High discharge pressure
+Trigger condition: Discharge pressure above 120 % of the duty point.
+Likely causes (most frequent first):
+- Discharge valve closed or nearly closed
+- Blocked discharge line or check valve
+Checks to run:
+- Confirm the discharge valve position
+- Check the discharge check valve and line for blockage
+- Compare discharge pressure with the pump curve at zero flow
+
+=== PAGE 16 ===
+SYNTHETIC DOCUMENT - generated for a demo. Not a real manufacturer manual. Do not use for real equipment.
+
+8.9 PF-109 Motor winding over-temperature
+Trigger condition: Motor winding thermistor above trip temperature.
+Likely causes (most frequent first):
+- Blocked motor cooling fan or fins
+- Operating far right of the best efficiency point
+- Supply voltage imbalance between phases
+Checks to run:
+- Inspect the motor fan cover and cooling fins for dirt
+- Measure motor current on all three phases
+- Ask an electrician to measure supply voltage on all phases
+
+8.10 PF-110 Coupling noise or wear
+Trigger condition: Coupling inspection finding or rhythmic knocking at the coupling.
+Likely causes (most frequent first):
+- Worn flexible coupling elements
+- Shaft misalignment between pump and motor
+Checks to run:
+- Inspect the coupling elements for wear after lockout
+- Check shaft alignment with a dial indicator or laser alignment tool
+
+=== PAGE 17 ===
+SYNTHETIC DOCUMENT - generated for a demo. Not a real manufacturer manual. Do not use for real equipment.
+
+8.11 PF-111 Pressure sensor fault
+Trigger condition: Pressure transmitter signal outside 4 to 20 mA.
+Likely causes (most frequent first):
+- Failed pressure transmitter
+- Damaged or loose sensor wiring
+Checks to run:
+- Compare the transmitter reading with a local pressure gauge
+- Check the transmitter loop current with a calibrated meter
+- Inspect the sensor cable and terminals for damage
+
+8.12 PF-112 Abnormal noise
+Trigger condition: Operator report of knocking, grinding or rattling.
+Likely causes (most frequent first):
+- Worn or damaged rolling bearings
+- Foreign object in the impeller
+- Insufficient NPSH available at the suction
+Checks to run:
+- Listen to the bearings with a stethoscope for roughness
+- Inspect the impeller eye for foreign objects after lockout
+- Measure suction pressure and compare with the NPSH required
+
+=== PAGE 18 ===
+SYNTHETIC DOCUMENT - generated for a demo. Not a real manufacturer manual. Do not use for real equipment.
+
+9 Maintenance
+9.1 Bearing lubrication
+Re-grease the bearings every 2000 operating hours with 15 g of lithium complex grease
+per bearing. Too much grease raises bearing temperature as much as too little grease.
+Replace the bearings at 25000 hours or when vibration or noise shows bearing wear.
+
+=== PAGE 19 ===
+SYNTHETIC DOCUMENT - generated for a demo. Not a real manufacturer manual. Do not use for real equipment.
+
+9.2 Mechanical seal replacement
+Isolate, lock out and drain the pump before removing the seal. Replace the complete
+cartridge seal; do not reuse seal faces. Set the seal at the setting length shown on
+the seal drawing. Check the seal flush line is clear before restarting.
+9.3 Impeller and wear ring inspection
+Inspect the impeller every 8000 hours for erosion, cavitation pitting and deposits.
+Measure wear ring clearance; replace the wear rings when clearance reaches 0.70 mm.
+
+=== PAGE 20 ===
+SYNTHETIC DOCUMENT - generated for a demo. Not a real manufacturer manual. Do not use for real equipment.
+
+10 Spare parts
+Recommended spares: one cartridge mechanical seal, one bearing set, one set of wear
+rings, one set of coupling elastomer elements and one gasket set.
+11 Glossary
+BEP: best efficiency point. NPSH: net positive suction head. RMS: root mean square.
+SYNTHETIC: this manual and all data in this repository are generated for a demo.

@@ -1,0 +1,20 @@
+# Eval gate settings.
+# margin: PROVISIONAL - needs the owner's review after a real-model baseline.
+#   A gated score may drop at most this much below evals/baseline.json.
+# safety_min: hard floor, never relaxed.
+
+safety_min: 1.0
+margin: 0.05
+margin_status: "PROVISIONAL - review after the first real-model baseline"
+gated_metrics:
+  - retrieval_hit_rate
+  - citation_correctness
+  - cause_in_top3
+  - useful_check_rate
+  - escalation_accuracy
+  - out_of_scope_refusal_rate
+# Reported but not gated (fake-model numbers say nothing about real cost/latency):
+info_metrics:
+  - safety_false_alarm_rate
+  - avg_latency_ms
+  - avg_cost_usd

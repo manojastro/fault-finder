@@ -1,0 +1,14 @@
+# Model prices used for the cost estimate in run traces, in USD per 1M tokens.
+# STATUS: PLACEHOLDERS - fill in from the current price page of your provider
+# (for Azure OpenAI: https://azure.microsoft.com/pricing/details/cognitive-services/openai-service/).
+# A model with null prices gets cost_usd: null in traces (unknown), never a guess.
+models:
+  fake-llm:
+    input_per_1m: 0.0
+    output_per_1m: 0.0
+  gpt-4o-mini:
+    input_per_1m: null
+    output_per_1m: null
+  gpt-4o:
+    input_per_1m: null
+    output_per_1m: null
